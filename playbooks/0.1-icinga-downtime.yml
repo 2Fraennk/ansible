@@ -1,0 +1,11 @@
+---
+- name: Manage Icinga Downtimes with Ansible
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    icinga_api_uri: "https://{{ global_icinga2_masters[0].hostname }}"
+    icinga_api_user: "{{ global_icinga2_api_user }}"
+    icinga_api_password: "{{ global_icinga2_api_password }}"  
+  roles:
+    - roles/icinga-downtime
