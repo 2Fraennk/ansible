@@ -74,7 +74,7 @@ ansible-playbook ./playbooks/playbook.yml> -e target="hostname1" -e icinga_actio
 License
 -------
 
-Apache
+GNU General Public License v3.0
 
 
 Author Information
