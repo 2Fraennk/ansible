@@ -42,14 +42,15 @@ Dependencies
 Example Playbooks
 ----------------
 
--- playbook for a hostgroup
-\---
-- name: Manage Icinga Downtimes with Ansible
-  hosts: localhost
-  connection: local
-  gather_facts: false
-  roles:
-    - roles/icinga-downtime
+--- playbook for a hostgroup \---
+```
+name: Manage Icinga Downtimes with Ansible
+hosts: localhost
+connection: local
+gather_facts: false
+roles:
+  - roles/icinga-downtime
+```
 
 
 
@@ -57,19 +58,29 @@ Example CLI commands
 -------
 
 - command template
+```
 ansible-playbook <path_to_playbooks/playbook.yml> -e icinga_host_filter="<groupname>" -e icinga_action="<icinga_action>"
+```
 
 - add downtime for all hosts in group devhosts and all of it's services
+```
 ansible-playbook ./playbooks/playbook.yml> -e icinga_host_filter="devhosts" -e icinga_action="add_downtime"
+```
 
 - remove downtime for all hosts in group devhosts and all of it's services
+```
 ansible-playbook ./playbooks/playbook.yml> -e icinga_host_filter="devhosts" -e icinga_action="remove_downtime"
+```
 
 - add downtime for load-check of all hosts in group devhosts
+```
 ansible-playbook ./playbooks/playbook.yml> -e icinga_host_filter="devhosts" -e icinga_action="add_downtime" -e single_service_downtime="true" -e service_filter="load"
+```
 
 - add downtime for single host "hostname1" and all it's services
+```
 ansible-playbook ./playbooks/playbook.yml> -e target="hostname1" -e icinga_action="add_downtime" -e single_host_downtime="true"
+```
 
 License
 -------
@@ -80,5 +91,5 @@ GNU General Public License v3.0
 Author Information
 ------------------
 
-This role was created by @FABI
-with support from @FLiPp3r90
+- this role was created by @FABI
+- with support from @FLiPp3r90
