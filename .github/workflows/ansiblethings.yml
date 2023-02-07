@@ -13,8 +13,8 @@ jobs:
     strategy:
       matrix:
         ansible:
+          - stable-2.9
           - stable-2.10
-          - stable-3.10
     runs-on: ubuntu-latest
 
     steps:
